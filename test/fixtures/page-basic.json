@@ -1,0 +1,28 @@
+{
+  "input": {
+    "type": "page",
+    "userId": "user-id",
+    "name": "Gainsight",
+    "category": "Docs",
+    "timestamp": "2014",
+    "traits": {
+      "title": "Docs - Gainsight"
+    },
+    "context": {
+      "ip": "10.0.0.1"
+    }
+  },
+  "output": {
+    "type": "page",
+    "userId": "user-id",
+    "name": "Gainsight",
+    "category": "Docs",
+    "timestamp": {},
+    "traits": {
+      "title": "Docs - Gainsight"
+    },
+    "context": {
+      "ip": "10.0.0.1"
+    }
+  }
+}

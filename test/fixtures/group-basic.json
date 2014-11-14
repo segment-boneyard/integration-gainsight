@@ -1,0 +1,39 @@
+{
+  "input": {
+    "type": "group",
+    "userId": "user-id",
+    "groupId": "group-id",
+    "traits": {
+      "avatar": "avatar.jpg",
+      "country": "some-country",
+      "name": "John Doe",
+      "gender": "male",
+      "email": "jd@example.com",
+      "phone": "55555",
+      "city": "some-city",
+      "age": "age"
+    },
+    "context": {
+      "ip": "10.0.0.1"
+    }
+  },
+  "output": {
+    "type": "group",
+    "userId": "user-id",
+    "groupId": "group-id",
+    "timestamp": {},
+    "traits": {
+      "avatar": "avatar.jpg",
+      "country": "some-country",
+      "name": "John Doe",
+      "gender": "male",
+      "email": "jd@example.com",
+      "phone": "55555",
+      "city": "some-city",
+      "age": "age"
+    },
+    "context": {
+      "ip": "10.0.0.1"
+    }
+  }
+}
