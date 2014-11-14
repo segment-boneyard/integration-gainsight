@@ -1,8 +1,8 @@
-[![Build Status](https://circleci.com/gh/segmentio/integration-gainsight.png)](https://circleci.com/gh/segmentio/integration-gainsight)
+[![Build Status](https://circleci.com/gh/segmentio/integration-gainsight/tree/master.png?style=badge)](https://circleci.com/gh/segmentio/integration-gainsight/tree/master)
 
-# Gainsight server-side integration.
+# integration-gainsight
 
-Write me...
+Gainsight server-side integration for Segment.
 
 
 ## License
