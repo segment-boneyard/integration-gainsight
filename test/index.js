@@ -23,8 +23,7 @@ describe('Gainsight', function(){
       .name('Gainsight')
       .endpoint('https://event.gainsight.com')
       .channels(['server', 'mobile', 'client'])
-      .ensure('settings.accessKey')
-      .retries(3);
+      .ensure('settings.accessKey');
   });
 
   describe('.validate()', function(){
