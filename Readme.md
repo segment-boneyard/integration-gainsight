@@ -1,4 +1,4 @@
-[![Build Status](https://circleci.com/gh/segmentio/integration-gainsight/tree/master.png?style=badge)](https://circleci.com/gh/segmentio/integration-gainsight/tree/master)
+[![Build Status](https://circleci.com/gh/segmentio/integration-gainsight/tree/master.png?style=svg)](https://circleci.com/gh/segmentio/integration-gainsight/tree/master)
 
 # integration-gainsight
 
