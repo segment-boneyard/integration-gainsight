@@ -1,24 +1,20 @@
+'use strict';
 
 var Test = require('segmentio-integration-tester');
-var helpers = require('./helpers');
-var facade = require('segmentio-facade');
-var should = require('should');
-var assert = require('assert');
 var Gainsight = require('..');
-var Track = facade.Track;
 
-describe('Gainsight', function(){
+describe('Gainsight', function() {
   var gainsight;
   var settings;
   var test;
 
-  beforeEach(function(){
+  beforeEach(function() {
     settings = { accessKey: '70a82725-e9ff-4aa3-99d3-00284d2df7cf' };
     gainsight = new Gainsight(settings);
     test = Test(gainsight, __dirname);
   });
 
-  it('should have correct settings', function(){
+  it('should have correct settings', function() {
     test
       .name('Gainsight')
       .endpoint('https://event.gainsight.com')
@@ -26,19 +22,19 @@ describe('Gainsight', function(){
       .ensure('settings.accessKey');
   });
 
-  describe('.validate()', function(){
-    it('should be invalid when .accessKey is missing', function(){
+  describe('.validate()', function() {
+    it('should be invalid when .accessKey is missing', function() {
       delete settings.accessKey;
       test.invalid({}, settings);
     });
 
-    it('should be valid when settings are complete', function(){
+    it('should be valid when settings are complete', function() {
       test.valid({}, settings);
     });
   });
 
-  describe('.track()', function(){
-    it('success', function(done){
+  describe('.track()', function() {
+    it('success', function(done) {
       var json = test.fixture('track-basic');
       test
         .set(settings)
@@ -48,7 +44,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('track-basic');
       test
         .set({ accessKey: '1234' })
@@ -57,8 +53,8 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.identify()', function(){
-    it('success', function(done){
+  describe('.identify()', function() {
+    it('success', function(done) {
       var json = test.fixture('identify-basic');
       test
         .set(settings)
@@ -68,7 +64,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('identify-basic');
       test
         .set({ accessKey: '1234' })
@@ -77,8 +73,8 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.alias()', function(){
-    it('success', function(done){
+  describe('.alias()', function() {
+    it('success', function(done) {
       var json = test.fixture('alias-basic');
       test
         .set(settings)
@@ -88,7 +84,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('alias-basic');
       test
         .set({ accessKey: '1234' })
@@ -97,8 +93,8 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.group()', function(){
-    it('success', function(done){
+  describe('.group()', function() {
+    it('success', function(done) {
       var json = test.fixture('group-basic');
       test
         .set(settings)
@@ -108,7 +104,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('group-basic');
       test
         .set({ accessKey: '1234' })
@@ -117,8 +113,8 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.page()', function(){
-    it('success', function(done){
+  describe('.page()', function() {
+    it('success', function(done) {
       var json = test.fixture('page-basic');
       test
         .set(settings)
@@ -128,7 +124,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('page-basic');
       test
         .set({ accessKey: '1234' })
@@ -137,8 +133,8 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.screen()', function(){
-    it('success', function(done){
+  describe('.screen()', function() {
+    it('success', function(done) {
       var json = test.fixture('screen-basic');
       test
         .set(settings)
@@ -148,7 +144,7 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('should error with invalid access key', function(done) {
       var json = test.fixture('screen-basic');
       test
         .set({ accessKey: '1234' })
