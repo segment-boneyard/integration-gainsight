@@ -13,7 +13,7 @@
     "test": "make test"
   },
   "dependencies": {
-    "segmentio-integration": "git+ssh://git@github.com/segmentio/integration.git#server-side-debugger-dep",
+    "segmentio-integration": "git+ssh://git@github.com/segmentio/integration.git#server-side-debugger-dep"
   },
   "devDependencies": {
     "istanbul": "0.x",
