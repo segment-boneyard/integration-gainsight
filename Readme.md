@@ -1,6 +1,4 @@
-[![Build Status](https://circleci.com/gh/segmentio/integration-gainsight/tree/master.png?style=svg)](https://circleci.com/gh/segmentio/integration-gainsight/tree/master)
-
-# integration-gainsight
+# integration-gainsight [![CircleCI](https://circleci.com/gh/segment-integrations/integration-gainsight/tree/master.svg?style=svg)](https://circleci.com/gh/segment-integrations/integration-gainsight/tree/master)
 
 Gainsight server-side integration for Segment.
 
