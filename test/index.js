@@ -77,26 +77,6 @@ describe('Gainsight', function(){
     });
   });
 
-  describe('.alias()', function(){
-    it('success', function(done){
-      var json = test.fixture('alias-basic');
-      test
-        .set(settings)
-        .alias(json.input)
-        .sends(json.output)
-        .expects(200)
-        .end(done);
-    });
-
-    it('should error with invalid access key', function(done){
-      var json = test.fixture('alias-basic');
-      test
-        .set({ accessKey: '1234' })
-        .alias(json.input)
-        .error(done);
-    });
-  });
-
   describe('.group()', function(){
     it('success', function(done){
       var json = test.fixture('group-basic');
@@ -113,46 +93,6 @@ describe('Gainsight', function(){
       test
         .set({ accessKey: '1234' })
         .group(json.input)
-        .error(done);
-    });
-  });
-
-  describe('.page()', function(){
-    it('success', function(done){
-      var json = test.fixture('page-basic');
-      test
-        .set(settings)
-        .page(json.input)
-        .sends(json.output)
-        .expects(200)
-        .end(done);
-    });
-
-    it('should error with invalid access key', function(done){
-      var json = test.fixture('page-basic');
-      test
-        .set({ accessKey: '1234' })
-        .page(json.input)
-        .error(done);
-    });
-  });
-
-  describe('.screen()', function(){
-    it('success', function(done){
-      var json = test.fixture('screen-basic');
-      test
-        .set(settings)
-        .screen(json.input)
-        .sends(json.output)
-        .expects(200)
-        .end(done);
-    });
-
-    it('should error with invalid access key', function(done){
-      var json = test.fixture('screen-basic');
-      test
-        .set({ accessKey: '1234' })
-        .screen(json.input)
         .error(done);
     });
   });

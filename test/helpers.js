@@ -181,52 +181,6 @@ exports.identify = function (options) {
   }, options));
 };
 
-/**
- * Create a page call merged from `options`
- *
- * @param {Object} options
- * @return {Page}
- */
-
-exports.page = function(options){
-  return new facade.Page(merge({
-    userId: firstId,
-    name: 'Docs',
-    category: 'Support',
-    properties: {
-      url: 'https://segment.io/docs',
-      title: 'Analytics.js - Segment.io'
-    },
-    context: {
-      ip: '12.212.12.49'
-    },
-    timestamp: new Date,
-    channel: 'server'
-  }, options || {}));
-};
-
-/**
- * Create a screen call merged from `options`
- *
- * @param {Object} options
- * @return {Page}
- */
-
-exports.screen = function(options){
-  return new facade.Screen(merge({
-    userId: firstId,
-    name: 'Login',
-    category: 'Authentication',
-    properties: {
-      type: 'Facebook'
-    },
-    context: {
-      ip: '12.212.12.49'
-    },
-    timestamp: new Date,
-    channel: 'server'
-  }, options || {}));
-};
 
 /**
  * Create a group call merged from `options`
@@ -252,21 +206,5 @@ exports.group = function(options){
     },
     timestamp: new Date,
     channel: 'server'
-  }, options || {}));
-};
-
-/**
- * Create an alias call merged from `options`
- *
- * @param {Object} options
- * @return {Alias}
- */
-
-exports.alias = function (options) {
-  return new facade.Alias(merge({
-    from      : firstId,
-    to        : secondId,
-    channel   : 'server',
-    timestamp : new Date()
   }, options || {}));
 };
