@@ -13,7 +13,17 @@ describe('Gainsight', function(){
   var test;
 
   beforeEach(function(){
-    settings = { accessKey: '70a82725-e9ff-4aa3-99d3-00284d2df7cf' };
+    settings = {
+      accessKey: '70a82725-e9ff-4aa3-99d3-00284d2df7cf',
+      events: [
+        {
+          key: 'mapped event',
+          value: {
+            segmentEvent: 'mapped event'
+          }
+        }
+      ]
+    };
     gainsight = new Gainsight(settings);
     test = Test(gainsight, __dirname);
   });
@@ -38,7 +48,17 @@ describe('Gainsight', function(){
   });
 
   describe('.track()', function(){
-    it('success', function(done){
+    it('should error with invalid access key', function(done){
+      var json = test.fixture('track-basic');
+      json.input.event = 'mapped event';
+      test
+        .set({ accessKey: '1234' })
+        .track(json.input)
+        .error(done);
+    });
+
+    it('should let any track events through if no events are mapped', function(done){
+      settings.events = [];
       var json = test.fixture('track-basic');
       test
         .set(settings)
@@ -48,12 +68,27 @@ describe('Gainsight', function(){
         .end(done);
     });
 
-    it('should error with invalid access key', function(done){
+    it('if events are pre-mapped, should send mapped events', function(done){
+      var json = test.fixture('track-basic');
+      json.input.event = 'mapped event';
+      json.output.event = 'mapped event';
+      test
+        .set(settings)
+        .track(json.input)
+        .sends(json.output)
+        .expects(200)
+        .end(done);
+    });
+
+    it('if events are pre-mapped, should not send unmapped events', function(done){
       var json = test.fixture('track-basic');
       test
-        .set({ accessKey: '1234' })
+        .set(settings)
         .track(json.input)
-        .error(done);
+        .requests(0);
+
+      test
+        .end(done);
     });
   });
 
