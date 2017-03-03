@@ -1,6 +1,6 @@
 {
-  "name": "integration-gainsight",
-  "version": "1.4.0",
+  "name": "@segment/integration-gainsight",
+  "version": "1.4.1",
   "private": true,
   "description": "Gainsight server-side integration",
   "author": "Segment <friends@segment.com>",
